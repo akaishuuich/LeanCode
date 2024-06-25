@@ -40,7 +40,7 @@ Below is a table listing each parameter along with its description and available
 for example , If you want to perform a code search task using the CodeBERT model with a LeanCode strategy at a 40% pruning ratio. execute the command as shown below ，then you can obtain the corresponding training and evaluation commands, which then allow you to conduct the respective experiments
 
 ```
-python sh/gen_cmd.py --task_type codesearch --model_type codebert --prune_strategy leancode --prune_ratio 30
+python sh/gen_cmd.py --task_type codesearch --model_type codebert --prune_strategy leancode --prune_ratio 40
 ```
 If you need to conduct an experiment on CodeBERT for code search without pruning (base expirement), you can use the following commands to obtain the necessary commands for training and inference.
 ```
