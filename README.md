@@ -24,7 +24,7 @@ rm Cleaned_CodeSearchNet.zip
 cd ../..
 ```
 ### Reproduce the experimental results
-We conducted code simplification experiments on two tasks, `code search` and `code summarization`, using two models: `CodeBERT` and `CodeT5`. These experiments involved three code simplification strategies—`LeanCode`, `DietCode`, and `LeanCode with the removal algorithm of DietCode` and five code simplification ratios: `10%`, `20%`, `30%`, `40%`, and `50%`.  
+We conducted code simplification experiments on two tasks, `code search` and `code summarization`, using two models: `CodeBERT` and `CodeT5`. These experiments involved three code simplification strategies—`LeanCode`,`SlimCode` , `DietCode`, and `LeanCode with the removal algorithm of DietCode` and five code simplification ratios: `10%`, `20%`, `30%`, `40%`, and `50%`.  
   
 You can use `gen_cmd.py` in `sh` floder to get the training and evaluating cmd to run a broad set of experiments by simply passing the `task_type`, `model_type`, `prune_strategy` and `prune_ratio` arguments. 
 Below is a table listing each parameter along with its description and available options:
@@ -33,16 +33,16 @@ Below is a table listing each parameter along with its description and available
 |--------------------|-------------------------------------------------------|-----------------------------------------------------------------|
 | **task_type**      | Specifies the type of task to perform.                | `codesearch`, `code2nl`                                         |
 | **model_type**     | Determines the model used for the task.               | `codebert`, `codet5`                                            |
-| **prune_strategy** | Defines the pruning strategy to enhance model performance. | `leancode`, `dietcode`, `leancode_d`, `None`                  |
+| **prune_strategy** | Defines the pruning strategy to enhance model performance. | `leancode`,`slimcode`, `dietcode`, `leancode_d`, `None`                  |
 | **prune_ratio**    | Specifies the percentage of the model to prune.       | `10`, `20`, `30`, `40`, `50`                                    |
 
 #### Usage Examples
-for example , If you want to perform a code search task using the CodeBERT model with a LeanCode strategy at a 40% pruning ratio. execute the command as shown below ，then you can obtain the corresponding training and evaluation commands, which then allow you to conduct the respective experiments
+for example , If you want to perform a code search task using the CodeBERT model with a LeanCode strategy at a 40% pruning ratio. execute the command as shown below ，then you can obtain the corresponding infrence command, which then allow you to conduct the respective experiments
 
 ```
 python sh/gen_cmd.py --task_type codesearch --model_type codebert --prune_strategy leancode --prune_ratio 40
 ```
-If you need to conduct an experiment on CodeBERT for code search without pruning (base expirement), you can use the following commands to obtain the necessary commands for training and inference.
+If you need to conduct an experiment on CodeBERT for code search without pruning (base expirement), you can use the following commands to obtain the necessary command for inference.
 ```
 python sh/gen_cmd.py --task_type codesearch --model_type codebert --prune_strategy None
 ```
