@@ -28,8 +28,11 @@ cd ../..
 
 ### Prepare pruned test data by slimcode and dietcode
 Because of the algorithm of SlimCode need to remove all the comments in the code and remove the code that can't be converted to AST after removing the comments , so ,we download the test data from [SlimCode](https://github.com/gksajy/slimcode?tab=readme-ov-file)
+```
 Go to `slimcode` folder , run SlimCode.java ,you can get the pruned data of code search and summarization by SlimCode .
+```
 Go to `codesearch`,with the help of prune_dietcode.py , you can get the pruned data of code search by DietCode and LeanCode with the removal algorithm of DietCode
+```
 run codesearch/process_pruned_data.py
 
 ### Reproduce the experimental results
@@ -56,10 +59,7 @@ If you need to conduct an experiment on CodeBERT for code search without pruning
 python utils/gen_cmd.py --task_type codesearch --model_type codebert --prune_strategy None
 ```
 ### Generate the weight_dic of LeanCode
-If you want to generate the weight dictionaries by yourself , Go to `sh` folder, set the `WORKDIR` in `gen_weights.sh` to be your cloned LeanCode repository path. using the following command you can get the weights and get it saved. Ensure you have completed the base experiments and saved the fine-tuned model; the commands provided in the previous section will assist you in this process.
-```
-bash sh/gen_weights.sh
-```
+If you want to generate the weight dictionaries by yourself , add --gen_weight when you train the base model and the gen_weight_dic.py in the `utils` folder will help you generate the weight_dic
 ### Other works
 - the `analyse_attention` folder can help you analyse self_attention , self attention of cls token and encoder-decoder attention with the example of BubbleSort.  
 - the `alalyse_weight.py` in `utils` folder can help you get Statistics of cls attention scores and encoder-decoder attention scores based on the training dataset .
