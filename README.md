@@ -26,6 +26,7 @@ cd ../..
 
 ### Training
 you can use the following cmd to train the model for code search and code summarization on CodeT5 and CodeBERT:
+
 code search on CodeBERT:
 ```
 python3 codesearch/run_classifier.py --model_type roberta --tokenizer_name microsoft/codebert-base --model_name_or_path microsoft/codebert-base --task_name codesearch --do_train --do_eval --prune_strategy None --output_dir ./models/codesearch/codebert/base --data_dir ./data/codesearch/train_valid/java --train_file train.txt --dev_file valid.txt --max_seq_length 512 --per_gpu_train_batch_size 64 --per_gpu_eval_batch_size 64 --learning_rate 1e-5 --num_train_epochs 4  --lang java --gradient_accumulation_steps 1 --overwrite_output_dir
