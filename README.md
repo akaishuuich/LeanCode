@@ -28,11 +28,11 @@ cd ../..
 
 ### Prepare pruned test data by slimcode and dietcode
 Because of the algorithm of SlimCode need to remove all the comments in the code and remove the code that can't be converted to AST after removing the comments , so ,we download the test data from [SlimCode](https://github.com/gksajy/slimcode?tab=readme-ov-file)
-```
+
 Go to `slimcode` folder , run SlimCode.java ,you can get the pruned data of code search and summarization by SlimCode .
-```
+
 Go to `codesearch`,with the help of prune_dietcode.py , you can get the pruned data of code search by DietCode and LeanCode with the removal algorithm of DietCode
-```
+
 run codesearch/process_pruned_data.py
 
 ### Reproduce the experimental results
